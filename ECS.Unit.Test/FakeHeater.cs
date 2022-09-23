@@ -1,11 +1,15 @@
 ﻿using System;
 
-namespace ECS.Redesign
+namespace ECS.Unit.Test
 {
-    public class FakeHeater : IHeater
+    public class FakeHeater : ECS_Redesign.IHeater
     {
         private bool _isOn;
         public bool IsOn { get { return _isOn; } }
+        public FakeHeater(bool active)
+        {
+            _isOn = active;
+        }
         public void TurnOn()
         {
             if (!_isOn) 

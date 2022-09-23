@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ECS.Redesign
+namespace ECS_Redesign
 {
-    internal interface IHeater
+    public interface IHeater
     {
         public void TurnOn();
         public void TurnOff();

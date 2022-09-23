@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ECS.Redesign
+namespace ECS_Redesign
 {
-    internal class ECS_testable
+    public class ECS_testable
     {
+        private int _lastLoggedTemp;
+        public int LastLoggedTemp { get { return _lastLoggedTemp; } }
+
         private int _threshold;
         private readonly ITempSensor _tempSensor;
         private readonly IHeater _heater;
@@ -15,16 +18,21 @@ namespace ECS.Redesign
             SetThreshold(thr);
             _tempSensor = ts;
             _heater = heat;
+            _lastLoggedTemp = _tempSensor.GetTemp();
         }
 
         public void Regulate()
         {
-            var t = _tempSensor.GetTemp();
-            Console.WriteLine($"Temperatur measured was {t}");
-            if (t < _threshold)
+            Console.WriteLine($"Temperature measured was {_lastLoggedTemp}");
+            if (_lastLoggedTemp < _threshold)
                 _heater.TurnOn();
             else
                 _heater.TurnOff();
+        }
+
+        public void LogTemp()
+        {
+            _lastLoggedTemp = _tempSensor.GetTemp();
         }
 
         public void SetThreshold(int thr)
