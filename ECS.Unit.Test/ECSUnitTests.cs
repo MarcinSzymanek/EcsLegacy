@@ -7,6 +7,7 @@ namespace ECS.Unit.Test
 
         ECS_testable _ecsUnit;
         FakeHeater _heaterUnit;
+        FakeWindow _windowUnit;
         FakeTempSensor _tempSensorUnit;
         const int defaultThreshhold = 18;
         const bool defaultHeaterState = true;
