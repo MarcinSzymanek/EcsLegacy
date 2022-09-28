@@ -7,19 +7,20 @@ namespace ECS_Redesign
     public class ECS_testable
     {
         const int defaultWindowTempThr = 20;
+        const int defaultHeaterThreshhold = 15;
         private int _lastLoggedTemp;
         public int LastLoggedTemp { get { return _lastLoggedTemp; } }
 
-        private int _windowTempTreshold;
-        private int _threshold;
+        private int _windowThreshold;
+        private int _heaterThreshold;
         private readonly ITempSensor _tempSensor;
         private readonly IHeater _heater;
         private readonly IWindow _window;
 
-        public ECS_testable(int thr, ITempSensor ts, IHeater heat, IWindow win)
+        public ECS_testable(ITempSensor ts, IHeater heat, IWindow win)
         {
-            SetThreshold(thr);
-            _windowTempTreshold = defaultWindowTempThr;
+            SetHeaterThreshold(defaultHeaterThreshhold);
+            SetWindowThreshold(defaultWindowTempThr);
             _tempSensor = ts;
             _heater = heat;
             _window = win;
@@ -30,7 +31,7 @@ namespace ECS_Redesign
         {
             Console.WriteLine($"Temperature measured was {_lastLoggedTemp}");
 
-            if (_lastLoggedTemp < _windowTempTreshold)
+            if (_lastLoggedTemp < _windowThreshold)
                 _window.Close();
             else
             {
@@ -38,14 +39,14 @@ namespace ECS_Redesign
                 _heater.TurnOff();
             }
 
-            if (_lastLoggedTemp < _threshold)
+            if (_lastLoggedTemp < _heaterThreshold)
             {
                 if (!_window.IsOpen)
                 {
                     _heater.TurnOn();
                 }
             }
-            else if (_lastLoggedTemp > _threshold)
+            else if (_lastLoggedTemp > _heaterThreshold)
             {
                 _heater.TurnOff();
             }
@@ -55,14 +56,14 @@ namespace ECS_Redesign
             _lastLoggedTemp = _tempSensor.GetTemp();
         }
 
-        public void SetThreshold(int thr)
+        public void SetHeaterThreshold(int thr)
         {
-            _threshold = thr;
+            _heaterThreshold = thr;
         }
 
         public int GetThreshold()
         {
-            return _threshold;
+            return _heaterThreshold;
         }
 
         public int GetCurTemp()
@@ -70,9 +71,9 @@ namespace ECS_Redesign
             return _tempSensor.GetTemp();
         }
 
-        public void SetWindowTreshhold(int val)
+        public void SetWindowThreshold(int val)
         {
-            _windowTempTreshold = val;
+            _windowThreshold = val;
         }
 
        
