@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ECS.Redesign
+namespace ECS.Unit.Test
 {
-    internal class FakeTempSensor : ITempSensor
+    public class FakeTempSensor : ECS_Redesign.ITempSensor
     {
         private Random gen = new Random();
 
@@ -12,5 +12,6 @@ namespace ECS.Redesign
         {
             return gen.Next(-5, 45);
         }
+
     }
 }

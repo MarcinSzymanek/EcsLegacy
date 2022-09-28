@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECS.Legacy", "ECS.Legacy\ECS.Legacy.csproj", "{04BB7A61-C926-4654-A911-EA7EAE974326}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECS.Redesign", "ECS.Redesign\ECS.Redesign.csproj", "{22225320-BF7A-427B-8CED-9A6A748968B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECS_Redesign", "ECS.Redesign\ECS_Redesign.csproj", "{22225320-BF7A-427B-8CED-9A6A748968B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECS.Unit.Test", "ECS.Unit.Test\ECS.Unit.Test.csproj", "{3F19E8A2-BCB1-4887-BF18-7F9A054B5375}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{22225320-BF7A-427B-8CED-9A6A748968B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22225320-BF7A-427B-8CED-9A6A748968B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22225320-BF7A-427B-8CED-9A6A748968B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F19E8A2-BCB1-4887-BF18-7F9A054B5375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F19E8A2-BCB1-4887-BF18-7F9A054B5375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F19E8A2-BCB1-4887-BF18-7F9A054B5375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F19E8A2-BCB1-4887-BF18-7F9A054B5375}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
