@@ -68,7 +68,7 @@ namespace ECS.Unit.Test
             Assert.IsTrue(!_heaterUnit.IsOn && _windowUnit.IsOpen);
         }
 
-        // This is a comment
+        // This is a changed comment
         [Test]
         [TestCase(20)]
         [TestCase(0)]
